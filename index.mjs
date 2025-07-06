@@ -28,10 +28,12 @@ function userAuth(req, res, next) {
     }
 }
 
+let password;
+
 const pool = mysql.createPool({
     host: "gabedevspace.com",
     user: "gabedevs_webuser",
-    password: "(+U%[VpVSy$-",
+    password: password,
     // database: "gabedevs_final", // create db and set it
     connectionLimit: 10,
     waitForConnections: true

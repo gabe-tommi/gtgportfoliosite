@@ -1,6 +1,8 @@
 import express from 'express';
 import mysql from 'mysql2/promise';
 import session from 'express-session';
+import 'dotenv/config';
+
 
 const app = express();
 
@@ -28,13 +30,14 @@ function userAuth(req, res, next) {
     }
 }
 
-let password;
+let dataBasePassword = process.env.DB_PASS;
+console.log(dataBasePassword);
 
 const pool = mysql.createPool({
     host: "gabedevspace.com",
     user: "gabedevs_webuser",
-    password: password,
-    // database: "gabedevs_final", // create db and set it
+    password: dataBasePassword,
+    // database: "gabedevs_portfolio", // create db and set it
     connectionLimit: 10,
     waitForConnections: true
 });
@@ -43,3 +46,8 @@ const pool = mysql.createPool({
 app.get('/', (req, res) => {
     res.render('home');
 });
+
+
+app.listen(3000, () => {
+    console.log("server running port 3000");
+})

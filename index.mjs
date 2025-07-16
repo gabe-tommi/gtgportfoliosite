@@ -3,9 +3,7 @@ import mysql from 'mysql2/promise';
 import session from 'express-session';
 import 'dotenv/config';
 
-
 const app = express();
-
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
 
@@ -35,9 +33,9 @@ console.log(dataBasePassword);
 
 const pool = mysql.createPool({
     host: "gabedevspace.com",
-    user: "gabedevs_webuser",
+    user: "gabedevs_portfolio_user", 
     password: dataBasePassword,
-    // database: "gabedevs_portfolio", // create db and set it
+    database: "gabedevs_portfolio",
     connectionLimit: 10,
     waitForConnections: true
 });
@@ -46,7 +44,6 @@ const pool = mysql.createPool({
 app.get('/', (req, res) => {
     res.render('home');
 });
-
 
 app.listen(3000, () => {
     console.log("server running port 3000");

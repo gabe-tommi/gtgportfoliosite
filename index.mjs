@@ -11,6 +11,7 @@ app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json()); // To parse JSON bodies
 
+
 // Session middleware
 app.use(session({
     secret: 'your_secret_key',
@@ -29,7 +30,6 @@ function userAuth(req, res, next) {
 }
 
 let dataBasePassword = process.env.DB_PASS;
-console.log(dataBasePassword);
 
 const pool = mysql.createPool({
     host: "gabedevspace.com",

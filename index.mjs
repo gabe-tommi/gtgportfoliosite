@@ -45,6 +45,10 @@ app.get('/', (req, res) => {
     res.render('home');
 });
 
+app.get('/aboutme', (req, res) => {
+    res.render('aboutme');
+});
+
 app.listen(3000, () => {
     console.log("server running port 3000");
 })

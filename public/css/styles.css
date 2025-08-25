@@ -1,0 +1,17 @@
+#greg{ 
+    /* formatting for image of greg (cat) */
+    width: 200px;
+    height: auto;
+    margin: auto;
+    display: block; 
+    border: 5px solid #1e90ff;
+    padding: 15px;
+}
+
+.header{
+    /* universal formatting for header of each page */
+    /* see header.ejs for implementation */
+    text-align: center;
+    font-size: large;
+    color: rgb(85, 36, 248);
+}

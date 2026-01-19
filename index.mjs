@@ -29,16 +29,16 @@ function userAuth(req, res, next) {
     }
 }
 
-let dataBasePassword = process.env.DB_PASS;
+// let dataBasePassword = process.env.DB_PASS;
 
-const pool = mysql.createPool({
-    host: "gabedevspace.com",
-    user: "gabedevs_portfolio_user", 
-    password: dataBasePassword,
-    database: "gabedevs_portfolio",
-    connectionLimit: 10,
-    waitForConnections: true
-});
+// const pool = mysql.createPool({
+//     host: "gabedevspace.com",
+//     user: "gabedevs_portfolio_user", 
+//     password: dataBasePassword,
+//     database: "gabedevs_portfolio",
+//     connectionLimit: 10,
+//     waitForConnections: true
+// });
 
 // Routes
 app.get('/', (req, res) => {

@@ -21,13 +21,13 @@ app.use(session({
 }));
 
 // Middleware for user authentication
-function userAuth(req, res, next) {
-    if (req.session?.userAuthenticated) {
-        next();
-    } else {
-        res.redirect('/');
-    }
-}
+// function userAuth(req, res, next) {
+//     if (req.session?.userAuthenticated) {
+//         next();
+//     } else {
+//         res.redirect('/');
+//     }
+// }
 
 // let dataBasePassword = process.env.DB_PASS;
 

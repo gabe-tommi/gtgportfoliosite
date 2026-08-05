@@ -5,12 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <%- include('partials/stylelinks.ejs') %>
     <title>Document</title>
+    <link rel="preload" as="image" href="img/gabesnoops.jpg">
+    <link rel="preload" as="image" href="img/gabecymk.jpg">
 </head>
 <body>
     <header class="header">
         <%- include('partials/nav.ejs') %>
         <h1>About Me</h1>
     </header>
-    <img src="img/greggy.png" id="greg">
+    <div>
+        <text class="bodytext">
+            Gabe Gallagher
+        </text>
+    </div>
+    <div class="scroll-container">
+        <div class="image-container" id="imageScroller">
+            <img src="img/gabesnoops.jpg" class="scroll-img">
+            <img src="img/gabecymk.jpg" class="scroll-img">
+        </div>
+    </div>
+    
+    <script src="js/scrollerloop.js"></script>
 </body>
 </html>

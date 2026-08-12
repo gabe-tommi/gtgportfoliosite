@@ -46,7 +46,11 @@ app.get('/', (req, res) => {
 });
 
 app.get('/aboutme', (req, res) => {
-    res.render('aboutme');
+    res.render('aboutMe');
+});
+
+app.get('/projects', (req, res) => {
+    res.render('projectDir');
 });
 
 app.listen(3000, () => {

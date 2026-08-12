@@ -1,0 +1,52 @@
+.scroll-img{ 
+    width: 300px;
+    height: auto;
+    margin: auto;
+    /* display: block;  */
+    border: 5px solid #1e90ff;
+    padding: 15px;
+}
+
+.header{
+    /* universal formatting for header of each page */
+    /* see header.ejs for implementation */
+    text-align: center;
+    font-size: large;
+    color: rgb(85, 36, 248);
+}
+
+.bodytext{
+    display: block;
+    text-align: center;
+    font-size: medium;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #46a1fc;
+}
+
+.scroll-container {
+  overflow: hidden;
+  width: 100%;
+}
+
+.image-container {
+  display: flex;
+  gap: 10px;
+  animation: scroll 8s linear infinite;
+}
+
+.image-container img {
+  width: 300px;
+  height: auto;
+  border: 5px solid #1e90ff;
+  padding: 15px;
+  flex-shrink: 0; /* prevent images from shrinking */
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); /* moves exactly half (one set of images) */
+  }
+}

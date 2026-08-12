@@ -11,6 +11,7 @@ app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json()); // To parse JSON bodies
 
+
 // Session middleware
 app.use(session({
     secret: 'your_secret_key',
@@ -20,29 +21,36 @@ app.use(session({
 }));
 
 // Middleware for user authentication
-function userAuth(req, res, next) {
-    if (req.session?.userAuthenticated) {
-        next();
-    } else {
-        res.redirect('/');
-    }
-}
+// function userAuth(req, res, next) {
+//     if (req.session?.userAuthenticated) {
+//         next();
+//     } else {
+//         res.redirect('/');
+//     }
+// }
 
-let dataBasePassword = process.env.DB_PASS;
-console.log(dataBasePassword);
+// let dataBasePassword = process.env.DB_PASS;
 
-const pool = mysql.createPool({
-    host: "gabedevspace.com",
-    user: "gabedevs_portfolio_user", 
-    password: dataBasePassword,
-    database: "gabedevs_portfolio",
-    connectionLimit: 10,
-    waitForConnections: true
-});
+// const pool = mysql.createPool({
+//     host: "gabedevspace.com",
+//     user: "gabedevs_portfolio_user", 
+//     password: dataBasePassword,
+//     database: "gabedevs_portfolio",
+//     connectionLimit: 10,
+//     waitForConnections: true
+// });
 
 // Routes
 app.get('/', (req, res) => {
     res.render('home');
+});
+
+app.get('/aboutme', (req, res) => {
+    res.render('aboutMe');
+});
+
+app.get('/projects', (req, res) => {
+    res.render('projectDir');
 });
 
 app.listen(3000, () => {
